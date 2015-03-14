@@ -1,3 +1,17 @@
+/*
+ * Clyde XBee
+ * ------------
+ *
+ * Remotely control Clyde's task and ambient lights via XBee.
+ * Require pre-paired XBee radios.
+ *
+ * This project uses the SerialCommand library.
+ * --> https://github.com/kwasib/Arduino-SerialCommand
+ *
+ * March 8, 2015
+ *
+ */
+
 #include <Wire.h>
 #include <EEPROM.h>
 #include <Clyde.h>
@@ -21,7 +35,6 @@ void setup() {
   sCmd.addCommand("OFF", cmdOff);
   sCmd.setDefaultHandler(unrecognized);
   
-  //Clyde.eeprom()->reset();
   Clyde.begin();
   Serial1.write("Clyde is Ready!"); 
 }
